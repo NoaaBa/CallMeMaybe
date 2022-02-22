@@ -1,11 +1,12 @@
+import app.entities.User
 from app import MenuOperations
 from app import Config
+from app.entities import User
 
 
 def run():
-    username = input("Enter username: ")
-    password = input("Enter password: ")
-    while (MenuOperations.register_screen(username, password)) != Config.Operations.EXIT:
+    user = MenuOperations.register_screen()
+    if type(user) is app.entities.User.User:
         # User was able to register.
-        while (MenuOperations.menu_screen()) != Config.Operations.EXIT:
+        while (MenuOperations.menu_screen(user)) != Config.Operations.EXIT:
             continue
