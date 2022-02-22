@@ -42,13 +42,3 @@ def transform_user(username):
             new_user = User(user['user_id'], user['password'], user['rooms'])
             return new_user
     return False
-
-
-def update_rooms_to_user(username, room):
-    data = dict()
-    with open(Config.Links.USERS_DATA, "r") as file:
-        data = json.load(file)
-    file.close()
-    for user in data:
-        if username in user['user_id']:
-            user['rooms'] = room
