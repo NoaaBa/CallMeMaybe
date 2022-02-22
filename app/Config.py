@@ -1,7 +1,7 @@
 class Links:
     KAFKA_HOSTS = ['localhost:9092']
     USERS_DATA = r"json_data/users.json"
-    ROOMS_DATA = R"json_data/rooms.json"
+    ROOMS_DATA = R"json_data/rooms.txt"
 
 
 class Operations:
