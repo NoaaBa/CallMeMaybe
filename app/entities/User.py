@@ -1,3 +1,5 @@
+from app.core import DatabaseUsers
+
 class User:
     def __init__(self, user_id, password, rooms):
         self.user_id = user_id
@@ -8,3 +10,6 @@ class User:
         if room_name in self.rooms:
             return True
         return False
+
+    def add_room(self, room_name):
+        DatabaseUsers.update_rooms_to_user(self.user_id, room_name)
